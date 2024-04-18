@@ -1,4 +1,5 @@
 from flask import Flask, request, send_file
+from flask_cors import CORS
 import cv2
 import imageio
 import os
@@ -6,6 +7,7 @@ import tempfile
 import random
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/get_frame', methods=['GET'])
 def get_frame():
